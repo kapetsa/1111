@@ -15,17 +15,17 @@
 
   <table border="1" width="100%" cellpadding="5">
       <tr>
-          <th><input type="Checkbox"></th>
+          <th>**</th>
           <th>Username</th>
           <th>Date of registration</th>
           <th>Date of last enter</th>
           <th>Active</th>
-          <th></th>
+          <th>**</th>
       </tr>
 
     <#list allUsers as user>
       <tr>
-          <th><input type="Checkbox" name="ch"> </th>
+          <th>**</th>
           <th>${user.username}</th>
           <th>${user.dateOfReg}</th>
           <th>${user.lastEnter}</th>

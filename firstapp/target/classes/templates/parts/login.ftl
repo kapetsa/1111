@@ -5,7 +5,7 @@
     <style>
 
         body{
-            background: lightseagreen;
+            background: linear-gradient(lightseagreen,lightskyblue);
         }
     </style>
 

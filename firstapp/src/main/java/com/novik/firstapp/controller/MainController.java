@@ -6,9 +6,6 @@ import com.novik.firstapp.domain.Usr;
 import com.novik.firstapp.repos.UserRepo;
 import com.novik.firstapp.repos.UsrRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,10 +28,6 @@ public class MainController {
         Iterable<User> allUsers = userRepo.findAll();
         model.put("allUsers", allUsers);
         return "list";
-    }
-    public void ghj(){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String abvgd = auth.getName();
     }
 
 
