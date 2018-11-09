@@ -39,13 +39,13 @@ public class MainController {
 
     @PostMapping("/registration")
     public String addUser(Usr us, Map <String, Object> model) {
-     Usr usrFromDb =  usrRepo.findByUsername(us.getUsername());
-     if (usrFromDb!=null){
-         model.put("message", "User exists!");
-         return "registration";
-     }
+        Usr usrFromDb =  usrRepo.findByUsername(us.getUsername());
+        if (usrFromDb!=null){
+            model.put("message", "User exists!");
+            return "registration";
+        }
         us.setActive(true);
-        us.setRoles(Collections.singleton(Role.USER));
+        us.setRoles(Collections.singleton(Role.ADMIN));
         usrRepo.save(us);
         User nUs = new User(us.getUsername());
         nUs.setId(us.getId());

@@ -3,6 +3,6 @@
 
 <@c.page>
 <div align = "center">Registration page</div>
-${message?ifExists}
+<div align = "center">${message?ifExists}</div>
 <@l.login "/registration" />
 </@c.page>
