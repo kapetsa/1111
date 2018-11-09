@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Map;
 
@@ -17,11 +18,11 @@ public class UserController {
     @Autowired
     private UsrRepo usrRepo;
 
-    @GetMapping("/delete")
-    public String UserDel(@PathVariable User user, Map<String, Object> model){
-      userRepo.deleteById(user.getId());
-      usrRepo.deleteById(user.getId());
-        return "list";
+    @GetMapping("/delete/{id}")
+    public String UserDel(@PathVariable Long Id){
+      userRepo.deleteById(Id);
+      usrRepo.deleteById(Id);
+        return "redirect:/list";
     }
 
 

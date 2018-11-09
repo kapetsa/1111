@@ -15,10 +15,10 @@
    </div>
    <div align="center">All Users</div>
 
-
+<form>
   <table border="1" width="100%" cellpadding="5">
       <tr>
-          <th></th>
+          <th><a class="shift-icon"></a> </th>
           <th>Username</th>
           <th>Date of registration</th>
           <th>Date of last enter</th>
@@ -33,10 +33,11 @@
           <th>${user.dateOfReg}</th>
           <th>${user.lastEnter}</th>
           <th>${user.active?then("Active", "Blocked")}</th>
-          <th><div align = "left"><button type="submit" formaction="/delete" name="${user.getId()}" value="${user}" >delete</button></th>
+          <th><div align = "left"><button onclick="window.location.href=/delete/${user.getId()}" >delete</button></th>
       </tr>
     </#list>
   </table>
+</form>
 
     </div>
 </@c.page>
